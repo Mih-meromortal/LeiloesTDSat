@@ -74,7 +74,7 @@ public class cadastroVIEW extends javax.swing.JFrame {
         btnConsultar.setBackground(new Color(255, 140, 0)); 
         btnConsultar.setForeground(Color.BLACK);
         btnConsultar.setFont(fontePadrao);
-        btnConsultar.setText("Consultar");
+        btnConsultar.setText("Consultar / Vender");
 
         // --- Ações dos Botões ---
         

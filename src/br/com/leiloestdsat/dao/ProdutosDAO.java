@@ -55,4 +55,24 @@ public class ProdutosDAO {
         }
         return listagem;
     }
+    // Método para vender o produto (Atividade 3)
+    public void venderProduto(int id) {
+        // 1. Conecta no banco
+        conn = new conectaDAO().connectDB();
+        
+        // 2. Cria o comando SQL para atualizar o status
+        String sql = "UPDATE produtos SET status = 'Vendido' WHERE id = ?";
+        
+        try {
+            prep = conn.prepareStatement(sql);
+            prep.setInt(1, id); // Substitui o ? pelo ID que você digitou
+            
+            // 3. Executa o comando
+            prep.execute();
+            JOptionPane.showMessageDialog(null, "Produto vendido com sucesso!");
+            
+        } catch (SQLException erro) {
+            JOptionPane.showMessageDialog(null, "Erro ao vender produto: " + erro.getMessage());
+        }
+    }
 }

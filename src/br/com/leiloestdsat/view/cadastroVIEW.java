@@ -7,7 +7,7 @@ import java.awt.Color;
 import java.awt.Font;
 
 /**
- * Tela de Cadastro com Design Ajustado (Fontes Maiores e Botões à Direita)
+ * Tela de Cadastro com o Botão Consultar funcionando
  */
 public class cadastroVIEW extends javax.swing.JFrame {
 
@@ -45,7 +45,7 @@ public class cadastroVIEW extends javax.swing.JFrame {
 
         // --- Estilização (Fontes e Cores) ---
         
-        // Fontes aumentadas (+2pts do padrão, geralmente 12 -> 14)
+        // Fontes aumentadas
         Font fontePadrao = new Font("Segoe UI", Font.PLAIN, 14);
         Font fonteTitulo = new Font("Segoe UI", Font.PLAIN, 26);
 
@@ -65,13 +65,13 @@ public class cadastroVIEW extends javax.swing.JFrame {
         cadastroValor.setFont(fontePadrao);
 
         // Botão Cadastrar (Laranja)
-        btnCadastrar.setBackground(new Color(255, 140, 0)); // Laranja Escuro
-        btnCadastrar.setForeground(Color.BLACK); // Texto Preto
+        btnCadastrar.setBackground(new Color(255, 140, 0)); 
+        btnCadastrar.setForeground(Color.BLACK); 
         btnCadastrar.setFont(fontePadrao);
         btnCadastrar.setText("Cadastrar");
         
         // Botão Consultar (Laranja)
-        btnConsultar.setBackground(new Color(255, 140, 0)); // Laranja Escuro
+        btnConsultar.setBackground(new Color(255, 140, 0)); 
         btnConsultar.setForeground(Color.BLACK);
         btnConsultar.setFont(fontePadrao);
         btnConsultar.setText("Consultar");
@@ -84,86 +84,69 @@ public class cadastroVIEW extends javax.swing.JFrame {
             }
         });
 
-        // Botão Consultar (Por enquanto sem ação de troca de tela)
+        // --- AQUI ESTÁ A MUDANÇA (ATIVIDADE 2) ---
         btnConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                // Aqui virá o código para abrir a tela de listagem
-                JOptionPane.showMessageDialog(null, "A tela de consulta será implementada em breve.");
+                listagemVIEW listagem = new listagemVIEW(); 
+                listagem.setVisible(true);
             }
         });
 
-        // --- Layout (Posicionamento) ---
-        // O Layout GroupLayout permite dividir em eixos Horizontal e Vertical
+        // --- Layout ---
         
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         
-        // Grupo Horizontal
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40) // Margem esquerda
+                .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    // Título e Subtítulo centralizados na área deles
                     .addComponent(jLabel1)
                     .addComponent(jLabel4)
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    
-                    // Área Principal: Inputs na Esquerda --- Botões na Direita
                     .addGroup(layout.createSequentialGroup()
-                        // Coluna da Esquerda (Labels e Inputs)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(cadastroNome, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3)
                             .addComponent(cadastroValor, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        
-                        .addGap(40, 40, 40) // Espaço entre inputs e botões
-                        
-                        // Coluna da Direita (Botões Laranjas)
+                        .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnConsultar, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))))
-                .addContainerGap(40, Short.MAX_VALUE)) // Margem final
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         
-        // Grupo Vertical
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jLabel1) // Título
+                .addComponent(jLabel1)
                 .addGap(10, 10, 10)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4) // Subtítulo
+                .addComponent(jLabel4)
                 .addGap(40, 40, 40)
-                
-                // Linha onde começam os inputs e os botões lado a lado
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    
-                    // Bloco da Esquerda (Inputs)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cadastroNome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE) // Altura maior para o input
+                        .addComponent(cadastroNome, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cadastroValor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)) // Altura maior para o input
-                    
-                    // Bloco da Direita (Botões Centralizados verticalmente em relação aos inputs)
+                        .addComponent(cadastroValor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
-                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE) // Botão mais alto
+                        .addComponent(btnCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)
-                        .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))) // Botão mais alto
-                
+                        .addComponent(btnConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
-    }                      
+    }                           
 
     // --- Lógica de Cadastro ---
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {                                             
@@ -176,7 +159,6 @@ public class cadastroVIEW extends javax.swing.JFrame {
         ProdutosDAO produtodao = new ProdutosDAO();
         
         if(!nome.isEmpty() && !valor.isEmpty()){
-             // Validação para garantir que valor é número
              try {
                  produto.setNome(nome);
                  produto.setValor(Integer.parseInt(valor));
@@ -184,7 +166,6 @@ public class cadastroVIEW extends javax.swing.JFrame {
                  
                  produtodao.cadastrarProduto(produto);
                  
-                 // Limpa os campos
                  cadastroNome.setText("");
                  cadastroValor.setText("");
                  JOptionPane.showMessageDialog(null, "Sucesso! Produto cadastrado.");
@@ -195,25 +176,22 @@ public class cadastroVIEW extends javax.swing.JFrame {
         } else {
              JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
         }
-    }                                            
+    }                                           
 
     public static void main(String args[]) {
-        // Estilo visual (Look and Feel) para ficar mais moderno
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) { // Tenta usar o estilo Nimbus que suporta cores melhor
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-        } catch (Exception ex) {
-           // Se falhar, usa o padrão
-        }
+        } catch (Exception ex) {}
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new cadastroVIEW().setVisible(true);
             }
         });
-    }                 
+    }                  
 }

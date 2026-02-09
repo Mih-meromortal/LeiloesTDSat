@@ -1,20 +1,20 @@
-# Projeto LeiloesTDSat
+# Sistema de Leilões (LeiloesTDSat)
 
-## Status do Projeto
- Em desenvolvimento 
+## 📝 Descrição do Projeto
+Sistema desenvolvido para o curso técnico em Desenvolvimento de Sistemas (SENAC). O software realiza o cadastro e a venda de produtos em um cenário de leilão.
 
-## Tecnologias Aplicadas
-* Java (JDK 11 ou superior)
-* MySQL (Banco de Dados)
-* NetBeans IDE
-* Biblioteca MySQL Connector
+## 🚀 Funcionalidades
+* **Cadastro de Produtos:** Permite inserir nome, valor e status do produto.
+* **Listagem de Produtos:** Exibe todos os produtos cadastrados no banco de dados.
+* **Venda de Produtos:** Permite alterar o status do produto de "A Venda" para "Vendido".
+* **Filtragem:** Listagem separada para produtos já vendidos (Implementação da Atividade 3).
 
-## Time de Desenvolvedores
-* Michele marques Almeida
+## 🛠️ Tecnologias Utilizadas
+* **Linguagem:** Java (JDK 11+)
+* **IDE:** NetBeans
+* **Banco de Dados:** MySQL
+* **Interface:** Java Swing
+* **Versionamento:** Git e GitHub
 
-## Objetivo do Software
-O sistema serve para auxiliar uma casa de leilões na gestão de seus produtos, permitindo o cadastro e consulta de itens.
-
-## Funcionalidades (Requisitos)
-* Cadastro de novos produtos para leilão.
-* Listagem de produtos cadastrados.
+## 👤 Desenvolvedora
+Michele Marques Almeida
